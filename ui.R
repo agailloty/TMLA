@@ -4,7 +4,7 @@ library(shiny)
 tagList(
   tags$head(
     tags$title("TMLA - The Machine Learning App"),
-    tags$link(rel = "stylesheet", type="text/css", href="www/skin/styles.css"),
+    tags$link(rel = "stylesheet", type="text/css", href="skin/styles.css"),
     
   ), 
   
@@ -15,12 +15,12 @@ tagList(
   
   navbarPage(
     title = "TMLA",
-    tabPanel(""),
     tabPanel("Test", 
              includeMarkdown("README.Rmd")),
     tabPanel("Build", 
              tabsetPanel(
-               tabPanel("Data Import"),
+               tabPanel("Data Import", 
+                        actionButton(inputId = "importData", label = "Import dataset")),
                tabPanel("Algorithm"),
                tabPanel("AutoML")
              ))
